@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/maincard"
+    android:layout_margin="5dp"
+    android:layout_height="200dp"
+    android:weightSum="10"
+    android:id="@+id/mainlayout"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/maincardimage"
+        android:layout_weight="6"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/maincardtitle"
+        android:layout_weight="2"
+        android:ellipsize="end"
+        android:textColor="#000"
+        android:textSize="14dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:autoSizeTextType="uniform"
+        android:autoSizeTextType="uniform"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/maincardprice"
+        android:layout_weight="2"
+        android:textColor="@color/moneyColor"
+        android:textSize="14dp"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="TextView" />
+</LinearLayout>

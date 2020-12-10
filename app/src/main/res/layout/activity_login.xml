@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.labradorshub.hzlgeliyormlakat.ui.login.LoginViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.login.LoginActivity">
+
+        <TextView
+            android:id="@+id/logincenter"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/loginnick"
+            android:layout_width="285dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/logincenter"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="70dp"
+            android:ems="10"
+            android:backgroundTint="@color/colorPrimary"
+            android:hint="demo@hizligeliyo.com"
+            android:inputType="textEmailAddress"
+            android:text="@={viewModel.mail}" />
+
+        <EditText
+            android:id="@+id/loginpass"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_width="285dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loginnick"
+            android:layout_centerHorizontal="true"
+            android:hint="*****"
+            android:ems="10"
+            android:layout_marginTop="-20dp"
+            android:inputType="textPassword"
+            android:text="@={viewModel.pass}" />
+
+
+        <TextView
+            android:id="@+id/loginforget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loginpass"
+            android:layout_alignParentRight="true"
+            android:onClick="@{() -> viewModel.forgotpass()}"
+            android:layout_marginTop="10dp"
+            android:textSize="16dp"
+            android:layout_marginRight="60dp"
+            android:text="Sifremi Unuttum" />
+
+        <Button
+            android:id="@+id/loginbutton"
+            android:layout_width="204dp"
+            android:background="@drawable/loginbutton"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loginpass"
+            android:layout_centerHorizontal="true"
+            android:textColor="#fff"
+            android:onClick="@{(v) -> viewModel.login(v)}"
+            android:layout_marginTop="70dp"
+            android:text="Giriş Yap" />
+
+        <TextView
+            android:id="@+id/loginacctext1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loginbutton"
+            android:layout_toLeftOf="@id/loginbutton"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="-130dp"
+            android:textColor="#000"
+            android:text="Hesabın yok mu?" />
+
+        <TextView
+            android:id="@+id/loginacctext2"
+            android:layout_below="@id/loginbutton"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/loginacctext1"
+            android:onClick="@{() -> viewModel.newacc()}"
+            android:layout_marginLeft="135dp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kaydol" />
+
+    </RelativeLayout>
+</layout>

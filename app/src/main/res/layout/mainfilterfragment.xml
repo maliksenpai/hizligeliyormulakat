@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.labradorshub.hzlgeliyormlakat.ui.main.MainViewModel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:onClick="@{() -> viewModel.closefilter()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+            tools:ignore="VectorDrawableCompat" />
+
+        <RadioGroup
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_marginBottom="40dp"
+                android:textSize="28dp"
+                android:button="@null"
+                app:buttonCompat="@null"
+                android:textColor="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="@{() -> viewModel.men()}"
+                android:background="@drawable/filterfragmentbackground"
+                android:text="Men Clothing" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_marginBottom="40dp"
+                android:textSize="28dp"
+                android:button="@null"
+                app:buttonCompat="@null"
+                android:textColor="#fff"
+                android:gravity="center"
+                android:background="@drawable/filterfragmentbackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.women()}"
+                android:text="Women Clothing" />
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_marginBottom="40dp"
+                android:textSize="28dp"
+                android:button="@null"
+                android:textColor="#fff"
+                app:buttonCompat="@null"
+                android:background="@drawable/filterfragmentbackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="@{() -> viewModel.jewelery()}"
+                android:text="Jewelery" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_marginBottom="40dp"
+                android:textSize="28dp"
+                android:textColor="#fff"
+                android:button="@null"
+                app:buttonCompat="@null"
+                android:background="@drawable/filterfragmentbackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="@{() -> viewModel.electronics()}"
+                android:text="Electronics" />
+        </RadioGroup>
+    </RelativeLayout>
+</layout>
